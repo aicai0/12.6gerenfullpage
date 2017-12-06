@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>爱财的个人宣传页</title>
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<link rel="stylesheet" href="iconfont/iconfont.css">
+<style>
+.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+</style>
+<script src="js/jquery.js"></script>
+<script src="js/jquery.fullPage.js"></script>
+<style>
+	.section{
+          position: relative;
+          overflow: hidden;
+	}
+    .section h3{
+    	position: absolute;
+    	left: 0;
+    	right: 0;
+    	margin-left: auto;
+    	margin-right: auto;
+    	top: 60px;
+    	opacity: 0;
+    	font-size: 0;
+    	transition: all 1s;
+    }
+    .section1 .picleft{
+    	width: 400px;
+    	height: 300px;
+    	position: absolute;
+    	left: 100px;
+    	top: 40%;
+    	background: #fff;
+    	transition: all 2s;
+    	transform: translateX(-550px); 
+    }
+    .section1 .picright{
+    	width: 400px;
+    	height: 300px;
+    	position: absolute;
+    	right: 100px;
+    	top: 40%;
+    	background: #fff;
+    	transition: all 2s;
+    	transform: translateX(550px); 
+    }
+    .active .picleft{
+    	transition-delay:0.7s;
+    	transform: translateX(0);
+    }
+    .active .picright{
+    	transition-delay:0.7s;
+    	transform: translateX(0);
+    }
+    .active h3{
+    	transition-delay:0.7s;
+    	opacity: 1;
+    	font-size: 50px;
+    }
+    .section2 .text{
+    	width: 800px;
+    	height: 300px;
+    	position: absolute;
+    	background: #ccc;
+    	left: 0;
+    	right: 0;
+    	margin-right: auto;
+    	margin-left: auto;
+    	bottom:100px ;
+    	transition: all 1s;
+    	transform: translateY(400px);
+    }
+    .active .text{
+    	transition-delay:0.7s;
+    	transform: translateY(0);
+    }
+    .gd{
+    	position: fixed;
+    	left: 0;
+    	right: 0;
+    	margin-left: auto;
+    	margin-right: auto;
+    	bottom: 30px;
+    	width: 40px;
+    	height: 40px;
+    	font-family: "宋体";
+    	color: #fff;
+    	font-size: 30px;
+    	line-height: 40px;
+    	text-align: center;
+    	transform: rotate(90deg);
+    	animation: move 1s infinite; 
+    }
+    .section3 .toplef{
+        width: 400px;
+        height: 200px;
+        position: absolute;
+        top: 200px;
+        left: 300px;
+        transform: translateX(-700px) translateY(-400px);
+        background: #000;
+    }
+    .section3 .toprit{
+        width: 400px;
+        height: 200px;
+        position: absolute;
+        top: 200px;
+        left: 700px;
+        transform: translateX(700px) translateY(-400px);
+        background: #fff;
+    }
+    .section3 .botlef{
+        width: 400px;
+        height: 200px;
+        position: absolute;
+        top: 400px;
+        left: 300px;
+        transform: translateX(-700px) translateY(400px);
+        background: #fff;
+    }
+    .section3 .botrit{
+        width: 400px;
+        height: 200px;
+        position: absolute;
+        top: 400px;
+        left: 700px;
+        transform: translateX(700px) translateY(400px);
+        background: #000;
+    }
+     .active .toplef{
+        top: 200px;
+        left: 300px;
+        transition: all 1s;
+        transform: translateX(0) translateY(0);
+    }
+    .active .toprit{
+    	transition-delay:0.7s;
+        top: 200px;
+        left: 700px;
+        transition: all 1s;
+        transform: translateX(0) translateY(0);
+    }
+    .active .botlef{  
+        transition-delay:0.7s;   
+        top: 400px;
+        left: 300px;
+        transition: all 1s;
+        transform: translateX(0) translateY(0);
+    }
+    .active .botrit{
+    	transition-delay:0.7s;
+        top: 400px;
+        left: 700px;
+        transition: all 1s;
+        transform: translateX(0) translateY(0);
+       
+    } 
+    .section4 .icon0{
+    	width: 100px;
+    	height: 100px;
+    	position: absolute;
+    	left: 0;
+    	
+    	margin-left: auto;
+    	margin-right: auto;
+    	bottom: 150px;
+    	
+    }
+    .section4 .icon0 i{
+    	width: 100%;
+    	height: 100%;
+    	font-size: 80px;
+    	line-height: 100px;
+    	text-align: center;
+    }
+
+    .section4 .icon1{
+    	left: 300px;
+    	transform: translateY(-510px);
+    	transition: all 0.5s;
+    }
+    .section4 .icon2{
+    	left: 500px;
+    	transform: translateY(-510px);
+    	transition: all 1s;
+    }
+    .section4 .icon3{
+    	left: 700px;
+    	transform: translateY(-510px);
+    	transition: all 1.5s;
+    }
+    .section4 .icon4{
+    	left: 900px;
+    	transform: translateY(-510px);
+    	transition: all 2s;
+    }
+    .active .icon1{
+    	transition-delay:0.7s;
+    	transform: translateY(0);
+    }
+    .active .icon2{
+    	transition-delay:0.7s;
+    	transform: translateY(0);
+    }
+    .active .icon3{
+    	transition-delay:0.7s;
+    	transform: translateY(0);
+    }
+    .active .icon4{
+    	transition-delay:0.7s;
+    	transform: translateY(0);
+    }
+
+    @keyframes move{
+    	0%{
+            transform: rotate(90deg) ;
+            opacity: 1;
+            
+    	}
+    	100%{
+    		transform: rotate(90deg) translateX(60px);
+    		opacity: 0.6;
+    		
+    	}
+    } 
+
+</style>
+
+</head>
+
+<body>
+
+<div id="dowebok">
+	<div class="section section1">
+		<h3>HELLO EVERYBODY</h3>
+	    <div class="picleft"></div>
+	    <div class="picright"></div>
+	</div>
+	<div class="section section2">
+		<h3>WELCOME TO MY WEBSITE</h3>
+		<div class="text"></div>
+	</div>
+	<div class="section section3">
+		<h3>ABOUT MY STORY</h3>
+		<div class="toplef"></div>
+		<div class="toprit"></div>
+		<div class="botlef"></div>
+		<div class="botrit"></div>
+	</div>
+	<div class="section section4">
+		<h3>THANKS FOR YOUR ATTENTION</h3>
+		<div class="icon0 icon1"><i class="iconfont icon-dingdanxiangqingdadianhua"></i></div>
+		<div class="icon0 icon2"><i class="iconfont icon-youxiang"></i></div>
+		<div class="icon0 icon3"><i class="iconfont icon-qq"></i></div>
+		<div class="icon0 icon4"><i class="iconfont icon-weixin"></i></div>
+	</div>
+	
+</div>
+<div class="gd">&gt;&gt;</div>
+<script>
+$(function(){
+	$('#dowebok').fullpage({
+		sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90'],
+		'navigation': true,
+	});
+});
+</script>
+</body>
+</html>
